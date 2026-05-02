@@ -101,7 +101,7 @@ export default function SiteFooter() {
           <div className="footer-logo flex h-24 w-24 items-center justify-center sm:h-28 sm:w-28">
             <Image
               src="/favicon-logo.png"
-              alt={`${profile.name || "Nafiz Alam"} logo`}
+              alt={`${profile.name || "Mehedy Hasan"} logo`}
               width={112}
               height={112}
               className="h-[4.75rem] w-[4.75rem] object-contain sm:h-[5.75rem] sm:w-[5.75rem]"
@@ -122,7 +122,7 @@ export default function SiteFooter() {
         </nav>
 
         <p className="footer-copy mt-8 text-center text-sm sm:mt-10 sm:text-base">
-          &copy; {year} All rights reserved by {profile.name || "Nafiz Alam"}
+          &copy; {year} All rights reserved by {profile.name || "Mehedy Hasan"}
         </p>
       </div>
     </footer>

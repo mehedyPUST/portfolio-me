@@ -33,7 +33,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Nafiz Alam | Portfolio",
+  title: "Mehedy Hasan | Portfolio",
   description:
     "A creative, responsive portfolio scaffold built with Next.js for showcasing profile details, skills, education, experience, and project case studies.",
 };

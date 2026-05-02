@@ -60,7 +60,7 @@ export async function sendContactMessage(_, formData) {
     };
   }
 
-  const to = process.env.CONTACT_TO_EMAIL || "nafizalam.dev@gmail.com";
+  const to = process.env.CONTACT_TO_EMAIL || "mehedy.pust@gmail.com";
 
   try {
     await transporter.sendMail({
