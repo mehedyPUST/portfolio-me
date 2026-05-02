@@ -88,9 +88,8 @@ export default function Navbar({ items }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50">
       <div
-        className={`navbar-shell transition-all duration-300 ${
-          scrolled ? "is-scrolled" : ""
-        }`}
+        className={`navbar-shell transition-all duration-300 ${scrolled ? "is-scrolled" : ""
+          }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6 sm:py-5 lg:px-8 lg:py-6">
           <div className="flex items-center gap-4 md:gap-6">
@@ -98,7 +97,7 @@ export default function Navbar({ items }) {
               <span className="navbar-mark flex h-12 w-12 items-center justify-center sm:h-14 sm:w-14">
                 <Image
                   src="/favicon-logo.png"
-                  alt="Nafiz Alam logo"
+                  alt="Mehedy logo"
                   width={56}
                   height={56}
                   className="h-[2.7rem] w-[2.7rem] object-contain sm:h-[3.1rem] sm:w-[3.1rem]"
@@ -114,9 +113,8 @@ export default function Navbar({ items }) {
                 key={`${item.label}-${item.href}-${index}`}
                 href={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className={`navbar-link navbar-navlink relative pb-2 text-lg font-semibold transition-colors ${
-                  activeIndex === index ? "is-active" : ""
-                }`}
+                className={`navbar-link navbar-navlink relative pb-2 text-lg font-semibold transition-colors ${activeIndex === index ? "is-active" : ""
+                  }`}
               >
                 {item.label}
               </a>
@@ -158,11 +156,10 @@ export default function Navbar({ items }) {
                     handleNavClick(item.href);
                     setOpen(false);
                   }}
-                  className={`navbar-mobile-link rounded-2xl px-4 py-3 text-base font-medium transition-colors ${
-                    activeIndex === index
+                  className={`navbar-mobile-link rounded-2xl px-4 py-3 text-base font-medium transition-colors ${activeIndex === index
                       ? "is-active"
                       : ""
-                  }`}
+                    }`}
                 >
                   {item.label}
                 </a>

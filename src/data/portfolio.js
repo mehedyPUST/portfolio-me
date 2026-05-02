@@ -1,7 +1,7 @@
-import nafizPortfolioImage from "@/assests/nafiz_portfolio.png";
+import mehedyPortfolioImage from "@/assests/mehedy-portfolio.png";
 
 export const profile = {
-  name: "Nafiz Alam",
+  name: "Mehedy Hasan",
   designation: "Frontend Developer",
   rotatingDesignations: [
     "Frontend Developer",
@@ -16,7 +16,7 @@ export const profile = {
   ],
   intro:
     "This portfolio is set up with polished placeholders so you can launch the structure now and replace the story, photo, resume, and project details when they are ready.",
-  photo: nafizPortfolioImage,
+  photo: mehedyPortfolioImage,
   resumeUrl: "#",
   about: [
     "I started learning programming by following my curiosity around how websites feel fast, expressive, and easy to use. That curiosity turned into a habit of building small ideas, breaking them, and rebuilding them with more care each time.",
@@ -26,10 +26,10 @@ export const profile = {
 };
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/nafiz2024" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nafiz-alam04/" },
-  { label: "Twitter", href: "https://x.com/NafizAlamDev" },
-  { label: "Facebook", href: "https://www.facebook.com/nafiz.alam.733/" },
+  { label: "GitHub", href: "/" },
+  { label: "LinkedIn", href: "/" },
+  { label: "Twitter", href: "/" },
+  { label: "Facebook", href: "/" },
 ];
 
 export const skillGroups = [
@@ -67,9 +67,9 @@ export const skillGroups = [
 
 export const education = [
   {
-    institution: "Your University Name",
-    degree: "BSc in Computer Science and Engineering",
-    timeframe: "2021 - 2025",
+    institution: "Pabna University of Science and Technology",
+    degree: "BSc in Physics",
+    timeframe: "2013 - 2022",
     details: [
       "Replace this with your actual institution, degree title, and ongoing or completed timeline.",
       "Use this space for achievements such as CGPA, scholarships, thesis focus, or coursework relevant to web development.",
@@ -82,7 +82,7 @@ export const experience = [
   {
     title: "Frontend Developer Intern",
     organization: "Sample Studio or Company",
-    timeframe: "2024",
+    timeframe: "2025",
     highlights: [
       "Contributed to responsive user interface work with close attention to layout consistency across devices.",
       "Collaborated with designers and developers to turn requirements into reusable components and cleaner interaction flows.",
@@ -164,11 +164,11 @@ export const projects = [
 ];
 
 export const contact = {
-  email: "nafizalam.dev@gmail.com",
-  phone: "+8801876566181",
-  phoneLink: "+8801876566181",
-  whatsapp: "+8801876566181",
-  whatsappUrl: "https://wa.me/8801876566181",
+  email: "mehedy.wzpdcl@gmail.com",
+  phone: "+8801751479474",
+  phoneLink: "+8801751479474",
+  whatsapp: "+8801751479474",
+  whatsappUrl: "https://wa.me/8801751479474",
 };
 
 export const portfolioStats = [
