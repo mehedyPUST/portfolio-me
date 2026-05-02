@@ -100,12 +100,15 @@ export default function SiteFooter() {
         <div className="mt-8 flex justify-center sm:mt-10">
           <div className="footer-logo flex h-24 w-24 items-center justify-center sm:h-28 sm:w-28">
             <Image
-              src="/favicon-logo.png"
+              src="/icon.png"
               alt={`${profile.name || "Mehedy Hasan"} logo`}
               width={112}
               height={112}
-              className="h-[4.75rem] w-[4.75rem] object-contain sm:h-[5.75rem] sm:w-[5.75rem]"
+              className="h-[4.75rem] w-[4.75rem] object-contain rounded-full object-cover transition-all sm:h-[5.75rem] sm:w-[5.75rem]"
             />
+
+
+
           </div>
         </div>
 
