@@ -1,0 +1,20 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="40" y="40" width="1120" height="640" rx="32" fill="url(#paint0_linear)"/>
+  <circle cx="248" cy="252" r="124" fill="#0F172A"/>
+  <circle cx="248" cy="236" r="52" fill="#FDBA74"/>
+  <path d="M158 352C158 300.085 200.085 258 252 258H244C295.915 258 338 300.085 338 352V380H158V352Z" fill="#FB923C"/>
+  <rect x="432" y="128" width="494" height="54" rx="27" fill="#0F172A"/>
+  <rect x="432" y="214" width="562" height="182" rx="34" fill="white" fill-opacity="0.84"/>
+  <rect x="432" y="432" width="270" height="170" rx="30" fill="white" fill-opacity="0.72"/>
+  <rect x="724" y="432" width="270" height="170" rx="30" fill="#0F172A"/>
+  <rect x="104" y="448" width="230" height="154" rx="30" fill="white" fill-opacity="0.8"/>
+  <text x="438" y="162" fill="white" font-family="Arial, sans-serif" font-size="20" font-weight="700">CANVAS CONNECT</text>
+  <text x="470" y="292" fill="#0F172A" font-family="Arial, sans-serif" font-size="54" font-weight="700">Profiles, updates,</text>
+  <text x="470" y="348" fill="#0F172A" font-family="Arial, sans-serif" font-size="54" font-weight="700">and community</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="98" y1="74" x2="1046" y2="660" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#F5F3FF"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="720" height="860" viewBox="0 0 720 860" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="860" rx="48" fill="#111827"/>
+  <rect x="24" y="24" width="672" height="812" rx="36" fill="url(#bg)"/>
+  <circle cx="360" cy="290" r="118" fill="#FDE68A"/>
+  <path d="M220 660C220 560.589 300.589 480 400 480H320C419.411 480 500 560.589 500 660V700H220V660Z" fill="#0F172A"/>
+  <path d="M264 696C264 610.948 332.948 542 418 542H302C387.052 542 456 610.948 456 696V700H264V696Z" fill="#FB923C"/>
+  <circle cx="360" cy="284" r="84" fill="#FDBA74"/>
+  <path d="M284 252C284 207.817 319.817 172 364 172H370C414.183 172 450 207.817 450 252V308H284V252Z" fill="#1E293B"/>
+  <path d="M290 334C316.854 360.418 337.918 373.627 360 373.627C382.082 373.627 403.146 360.418 430 334" stroke="#0F172A" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="330" cy="282" r="10" fill="#0F172A"/>
+  <circle cx="390" cy="282" r="10" fill="#0F172A"/>
+  <path d="M335 318C347.441 326.365 372.559 326.365 385 318" stroke="#7C2D12" stroke-width="8" stroke-linecap="round"/>
+  <rect x="84" y="90" width="196" height="44" rx="22" fill="white" fill-opacity="0.72"/>
+  <text x="112" y="119" fill="#0F172A" font-family="Arial, sans-serif" font-size="20" font-weight="700">PLACEHOLDER PHOTO</text>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="90" x2="660" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF7ED"/>
+      <stop offset="1" stop-color="#E0F2FE"/>
+    </linearGradient>
+  </defs>
+</svg>
