@@ -46,7 +46,7 @@ export default function ContactForm() {
             required
             autoComplete="name"
             className="contact-input rounded-2xl border px-4 py-3 text-sm outline-none transition"
-            placeholder="Nafiz Alam"
+            placeholder="John Doe"
           />
         </label>
         <label className="grid gap-2">
@@ -88,9 +88,8 @@ export default function ContactForm() {
       <div className="contact-form-footer flex flex-col gap-3 pt-3 sm:flex-row sm:items-center sm:justify-end">
         {state.message ? (
           <p
-            className={`text-sm sm:mr-auto ${
-              isError ? "text-rose-300" : "text-emerald-300"
-            }`}
+            className={`text-sm sm:mr-auto ${isError ? "text-rose-300" : "text-emerald-300"
+              }`}
             aria-live="polite"
           >
             {state.message}
