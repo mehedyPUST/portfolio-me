@@ -1349,3 +1349,66 @@ button {
     display: none;
   }
 }
+
+
+.hero-designation-chip {
+  background: var(--surface-glass);
+  border: 1px solid var(--overlay-light-b);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.hero-designation-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cursor-dot-start), var(--cursor-dot-end));
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.hero-designation-text {
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced Motion সাপোর্ট (ডিভাইস লেভেলে অ্যানিমেশন অফ থাকলে এটিও অফ থাকবে) */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none !important;
+  }
+}
+
+
+
+.scroll-top-shell {
+  background: conic-gradient(linear-gradient(135deg, var(--cursor-dot-start), var(--color-accent-strong)) var(--scroll-progress),
+      transparent 0deg);
+}
+
+.scroll-top-shell::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  /* বর্ডারের থিকনেস কন্ট্রোল করবে */
+  background: var(--surface-glass);
+  border-radius: 50%;
+  z-index: -1;
+}

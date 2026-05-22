@@ -1,63 +1,14 @@
-// "use client";
-
-// import { useEffect, useState } from "react";
-
-// export default function CustomCursor() {
-//   const [position, setPosition] = useState({ x: 0, y: 0 });
-//   const [visible, setVisible] = useState(false);
-
-//   useEffect(() => {
-//     if (
-//       typeof window === "undefined" ||
-//       !window.matchMedia("(hover: hover) and (pointer: fine)").matches
-//     ) {
-//       return undefined;
-//     }
-
-//     const handleMove = (event) => {
-//       setPosition({ x: event.clientX, y: event.clientY });
-//       setVisible(true);
-//     };
-
-//     const handleLeave = () => {
-//       setVisible(false);
-//     };
-
-//     const handleEnter = () => {
-//       setVisible(true);
-//     };
-
-//     window.addEventListener("mousemove", handleMove);
-//     window.addEventListener("mouseout", handleLeave);
-//     window.addEventListener("mouseenter", handleEnter);
-
-//     return () => {
-//       window.removeEventListener("mousemove", handleMove);
-//       window.removeEventListener("mouseout", handleLeave);
-//       window.removeEventListener("mouseenter", handleEnter);
-//     };
-//   }, []);
-
-//   return (
-//     <div
-//       aria-hidden="true"
-//       className={`custom-cursor-dot ${visible ? "is-visible" : ""}`}
-//       style={{
-//         transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-//       }}
-//     />
-//   );
-// }
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function CustomCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [visible, setVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const cursorRef = useRef(null);
 
   useEffect(() => {
+    // মিডিয়া কুয়েরি চেক - টাচ ডিভাইসে কাস্টম কার্সার রেন্ডার করবে না
     if (
       typeof window === "undefined" ||
       !window.matchMedia("(hover: hover) and (pointer: fine)").matches
@@ -65,64 +16,49 @@ export default function CustomCursor() {
       return undefined;
     }
 
-    // Direct instant movement - no lag
+    // ১. পারফরম্যান্স বুস্টেড ডিরেক্ট DOM ম্যানিপুলেশন (কোনো রি-রেন্ডারিং ল্যাগ নেই)
     const handleMove = (event) => {
-      setPosition({ x: event.clientX, y: event.clientY });
-      setVisible(true);
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+      }
+      if (!visible) setVisible(true);
     };
 
-    const handleLeave = () => {
-      setVisible(false);
+    const handleLeave = () => setVisible(false);
+    const handleEnter = () => setVisible(true);
+
+    // ২. গ্লোবাল ইভেন্ট ডেলিগেশন (Event Delegation)
+    // এর ফলে SPA রাউটিং বা ডাইনামিক ফিল্টারিং হলেও হোভার ইফেক্ট ব্রেক করবে না
+    const handleMouseOver = (event) => {
+      const target = event.target;
+      if (!target) return;
+
+      const isInteractive = target.closest(
+        'a, button, input, textarea, select, [role="button"], .interactive, [data-cursor-interactive]'
+      );
+
+      setIsHovering(!!isInteractive);
     };
 
-    const handleEnter = () => {
-      setVisible(true);
-    };
-
-    // Handle hover effects for interactive elements
-    const handleInteractiveEnter = () => {
-      setIsHovering(true);
-    };
-
-    const handleInteractiveLeave = () => {
-      setIsHovering(false);
-    };
-
-    // Detect all interactive elements
-    const interactiveElements = document.querySelectorAll(
-      'a, button, input, textarea, select, [role="button"], .interactive, [data-cursor-interactive]'
-    );
-
-    interactiveElements.forEach((el) => {
-      el.addEventListener("mouseenter", handleInteractiveEnter);
-      el.addEventListener("mouseleave", handleInteractiveLeave);
-    });
-
-    window.addEventListener("mousemove", handleMove);
-    window.addEventListener("mouseout", handleLeave);
-    window.addEventListener("mouseenter", handleEnter);
+    window.addEventListener("mousemove", handleMove, { passive: true });
+    window.addEventListener("mouseover", handleMouseOver, { passive: true });
+    document.addEventListener("mouseleave", handleLeave);
+    document.addEventListener("mouseenter", handleEnter);
 
     return () => {
       window.removeEventListener("mousemove", handleMove);
-      window.removeEventListener("mouseout", handleLeave);
-      window.removeEventListener("mouseenter", handleEnter);
-
-      interactiveElements.forEach((el) => {
-        el.removeEventListener("mouseenter", handleInteractiveEnter);
-        el.removeEventListener("mouseleave", handleInteractiveLeave);
-      });
+      window.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseleave", handleLeave);
+      document.removeEventListener("mouseenter", handleEnter);
     };
-  }, []);
+  }, [visible]);
 
   return (
-    <>
-      <div
-        aria-hidden="true"
-        className={`custom-cursor-dot ${visible ? "is-visible" : ""} ${isHovering ? "is-hovering" : ""}`}
-        style={{
-          transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-        }}
-      />
-    </>
+    <div
+      ref={cursorRef}
+      aria-hidden="true"
+      className={`custom-cursor-dot ${visible ? "is-visible" : ""} ${isHovering ? "is-hovering" : ""
+        }`}
+    />
   );
 }
