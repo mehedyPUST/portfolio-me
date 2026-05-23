@@ -16,6 +16,7 @@ import {
   skillGroups,
   socialLinks,
 } from "@/data/portfolio";
+import Link from "next/link";
 
 const navItems = [
   { label: "About Me", href: "#about" },
@@ -50,7 +51,7 @@ function Hero() {
           <div className="space-y-8">
             <div className="hero-chip inline-flex max-w-full items-center gap-3 rounded-full border border-white/70 bg-white/75 px-4 py-2 text-xs text-slate-700 shadow-sm shadow-orange-100/80 backdrop-blur sm:text-sm">
               <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-accent)]" />
-              Placeholder content ready for your real story
+              My Real Story Begins Here
             </div>
 
             <div className="space-y-5">
@@ -135,8 +136,7 @@ function Hero() {
                     Focus
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Building thoughtful products with clean UI, strong structure,
-                    and room to grow.
+                    Crafting thoughtful products with clean UI, solid structure, and scalability in mind.
                   </p>
                 </div>
                 <div className="rounded-2xl bg-white/90 p-4">
@@ -144,7 +144,7 @@ function Hero() {
                     Updating Next
                   </p>
                   <p className="mt-2 text-sm leading-6 text-slate-700">
-                    Swap in your real image, resume, and links when you&apos;re ready.
+                    <Link href="/"> Next Projects </Link>
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ function AboutSection() {
       >
         <SectionHeading
           eyebrow="About Me"
-          title="A personal intro with space for both craft and character."
+          title="Curious web developer (React/Node.js) who writes clean code, learns from failures, and builds for people, not just browsers."
           description="This section is intentionally written with a warmer voice so your portfolio feels like a person, not just a list of technologies."
         />
         <div className="grid gap-6">
